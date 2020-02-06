@@ -21,17 +21,17 @@ pipeline {
         stage ("Build"){
                steps { 
                 sh '''
-                  echo "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}"
+                  echo "${DOCKER_REPO}:${DOCKER_IMAGE_NAME}${DOCKER_IMAGE_VERSION}"
                   ls
-                  docker build -t "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}" .
+                  docker build -t "${DOCKER_REPO}:${DOCKER_IMAGE_NAME}${DOCKER_IMAGE_VERSION}" .
                 '''
                }
         }
         stage ("Push"){
                steps { 
                 sh '''
-                  echo "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}"
-                  docker push "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}"
+                  echo "${DOCKER_REPO}:${DOCKER_IMAGE_NAME}${DOCKER_IMAGE_VERSION}"
+                  docker push "${DOCKER_REPO}:${DOCKER_IMAGE_NAME}${DOCKER_IMAGE_VERSION}"
                 '''
                }
         }
