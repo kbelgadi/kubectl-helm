@@ -30,6 +30,7 @@ pipeline {
         stage ("Push"){
                steps { 
                 sh '''
+                  echo "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}"
                   docker push "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}"
                 '''
                }
