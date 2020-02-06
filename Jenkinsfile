@@ -21,7 +21,7 @@ pipeline {
         stage ("Build"){
                steps { 
                 sh '''
-                  echo hello
+                  echo "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}"
                   ls
                   docker build -t "${env.DOCKER_REPO}:${env.DOCKER_IMAGE_NAME}${env.DOCKER_IMAGE_VERSION}" .
                 '''
