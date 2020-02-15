@@ -3,7 +3,7 @@ def buildimage = docker.image('buildimage:latest');
 pipeline {
     agent any
     environment {
-        DOCKER_REPO = "897964440075.dkr.ecr.eu-west-1.amazonaws.com/ecr_demo_dev/ecr_demo_dev"
+        DOCKER_REPO = "897964440075.dkr.ecr.eu-west-1.amazonaws.com/ecr_demo_dev"
         DOCKER_IMAGE_NAME = "helm-demo"
         DOCKER_IMAGE_VERSION = "0.1"
         AWS_ACCOUNT = "897964440075"
